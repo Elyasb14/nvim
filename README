@@ -1,2 +1,7 @@
 my nvim config
 
+to install, run the following
+
+```
+git clone git@github.com:Elyasb14/nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+```
