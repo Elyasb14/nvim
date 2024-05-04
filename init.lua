@@ -413,7 +413,7 @@ require('lazy').setup({
       local servers = {
         gopls = {},
         clangd = {},
-
+        bashls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
