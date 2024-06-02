@@ -1,0 +1,2 @@
+{ 'numToStr/Comment.nvim', opts = {} }
+
