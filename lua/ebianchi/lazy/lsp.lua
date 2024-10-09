@@ -116,6 +116,7 @@ return { -- LSP Configuration & Plugins
       clangd = {},
       bashls = {},
       zls = {},
+      yamlls = {},
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
