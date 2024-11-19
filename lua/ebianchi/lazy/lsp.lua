@@ -116,6 +116,9 @@ return { -- LSP Configuration & Plugins
       gopls = {},
       clangd = {},
       zls = {},
+      html = {},
+      cssls = {},
+      htmx = {},
       lua_ls = {
         settings = {
           Lua = {
