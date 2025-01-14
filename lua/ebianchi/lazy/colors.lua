@@ -1,4 +1,4 @@
-function ColorMyPencils(color)
+function ColorMe(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 
@@ -21,7 +21,7 @@ return {
               styles = {
                   -- Style to be applied to different syntax groups
                   -- Value is any valid attr-list value for `:help nvim_set_hl`
-                  comments = { italic = false },
+                  comments = { italic = true},
                   keywords = { italic = false },
                   -- Background styles. Can be "dark", "transparent" or "normal"
                   sidebars = "dark", -- style for sidebars, see below
@@ -44,7 +44,7 @@ return {
 
           vim.cmd("colorscheme rose-pine")
 
-          ColorMyPencils()
+          ColorMe()
       end
   },
 
