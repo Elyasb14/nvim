@@ -115,8 +115,13 @@ return { -- LSP Configuration & Plugins
       ruff = {},
       gopls = {},
       clangd = {},
-      zls = {},
-      html = {},
+zls = {
+    settings = {
+      zig = {
+        zigPath = "/opt/zig-macos-aarch64-0.14.0/zig",
+      }
+    }
+  },      html = {},
       cssls = {},
       htmx = {},
       lua_ls = {
@@ -125,7 +130,7 @@ return { -- LSP Configuration & Plugins
             completion = {
               callSnippet = 'Replace',
             },
-          },
+        }
         },
       },
     }
