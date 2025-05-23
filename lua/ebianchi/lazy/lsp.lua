@@ -113,17 +113,12 @@ return { -- LSP Configuration & Plugins
 
     local servers = {
       ruff = {},
+      mypy = {},
+      pylint = {},
+      pyright = {},
       gopls = {},
       clangd = {},
-zls = {
-    settings = {
-      zig = {
-        zigPath = "/opt/zig-macos-aarch64-0.14.0/zig",
-      }
-    }
-  },      html = {},
-      cssls = {},
-      htmx = {},
+      zls = {},
       lua_ls = {
         settings = {
           Lua = {
