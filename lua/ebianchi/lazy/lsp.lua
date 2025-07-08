@@ -71,6 +71,14 @@ return { -- LSP Configuration & Plugins
             end,
         })
 
+        vim.diagnostic.config({
+            virtual_text = true, -- Show inline diagnostic text
+            signs = true,   -- Show signs in the sign column
+            underline = true, -- Underline problem text
+            update_in_insert = false, -- Don’t update diagnostics in insert mode
+            severity_sort = true, -- Sort diagnostics by severity
+        })
+
         vim.api.nvim_create_autocmd('LspDetach', {
             group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
             callback = function(event)
