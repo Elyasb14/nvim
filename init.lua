@@ -8,7 +8,11 @@ vim.opt.relativenumber = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.swapfile = false
 
-vim.lsp.config['lua_ls'] = {
+vim.treesitter.build = ':TSUpdate'
+vim.treesitter.ensure_installed = {'zig', 'c', 'bash', 'lua'}
+vim.treesitter.highlight = true
+
+vim.lsp.config['lua-language-server'] = {
        -- Command and arguments to start the server.
        cmd = { 'lua-language-server' },
        -- Filetypes to automatically attach to.
@@ -27,4 +31,22 @@ vim.lsp.config['lua_ls'] = {
          }
        }
      }
+
+
+
+
+     vim.cmd[[set completeopt+=menuone,noselect,popup]]
+vim.lsp.start({
+  name = 'lua_ls',
+  cmd = {'L'},
+  on_attach = function(client, bufnr)
+    vim.lsp.completion.enable(true, client.id, bufnr, {
+      autotrigger = true,
+      convert = function(item)
+        return { abbr = item.label:gsub('%b()', '') }
+      end,
+    })
+  end,
+})
+
 vim.lsp.enable('lua_ls')
