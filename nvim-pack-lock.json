@@ -8,6 +8,10 @@
       "rev": "c642487086dbd9a93160e1679a1327be111cbc25",
       "src": "git@github.com:hrsh7th/cmp-path"
     },
+    "neovim": {
+      "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
+      "src": "git@github.com:rose-pine/neovim"
+    },
     "nvim-cmp": {
       "rev": "d97d85e01339f01b842e6ec1502f639b080cb0fc",
       "src": "git@github.com:hrsh7th/nvim-cmp.git"
@@ -19,6 +23,10 @@
     "nvim-treesitter": {
       "rev": "8cdffc6d334731ce3703b6d870a5a34fd878208a",
       "src": "git@github.com:nvim-treesitter/nvim-treesitter"
+    },
+    "tokyonight.nvim": {
+      "rev": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd",
+      "src": "git@github.com:folke/tokyonight.nvim"
     }
   }
 }

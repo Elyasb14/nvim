@@ -3,7 +3,9 @@ vim.pack.add {
 	'git@github.com:neovim/nvim-lspconfig',
     'git@github.com:hrsh7th/nvim-cmp.git',
     'git@github.com:hrsh7th/cmp-nvim-lsp',
-    'git@github.com:hrsh7th/cmp-path'
+    'git@github.com:hrsh7th/cmp-path',
+    'git@github.com:folke/tokyonight.nvim',
+'git@github.com:rose-pine/neovim'
 }
 
 vim.opt.number = true
@@ -21,7 +23,7 @@ ts.setup({
   ensure_installed = { "zig", "c", "bash", "lua" },
   highlight = { enable = true },
   build = ':TSUpdate',
-  indent = true, 
+  indent = true,
 })
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -29,31 +31,6 @@ vim.api.nvim_create_autocmd('FileType', {
   callback = function() vim.treesitter.start() end,
 })
 
-vim.lsp.config['lua_ls'] = {
-  cmd = { 'lua-language-server' },
-  filetypes = { 'lua' },
-  root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-      }
-    }
-  }
-}
-vim.lsp.enable('lua_ls')
+require("lsp")
+require("color")
 
-local cmp = require 'cmp'
-cmp.setup({
-    completion = { completeopt = 'menu,menuone,noinsert' },
-    sources = {
-      { name = 'nvim_lsp' },
-      { name = 'path' },
-    },
-    mapping = {
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping.select_next_item(),
-        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-    },
-})
