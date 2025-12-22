@@ -1,28 +1,29 @@
-vim.lsp.config['lua_ls'] = {
-    cmd = { 'lua-language-server' },
-    filetypes = { 'lua' },
-    root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
-    settings = {
-        Lua = {
-            runtime = {
-                version = 'LuaJIT',
-            }
-        }
+--- @param name string LSP server name
+--- @param cmd string[] Command to start the LSP server
+--- @param filetypes string[] File types this server handles
+--- @param settings table? Optional settings for the server
+--- @return nil
+local function setup_lsp(name, cmd, filetypes, settings)
+    vim.lsp.config[name] = {
+        cmd = cmd,
+        filetypes = filetypes,
+        root_markers = {},
+        settings = settings or {}
     }
-}
-vim.lsp.enable('lua_ls')
+    vim.lsp.enable(name)
+end
 
-vim.lsp.config["zls"] = {
-    cmd = { 'zls' },
-    filetypes = { 'zig', 'zir' },
-}
-vim.lsp.enable('zls')
+setup_lsp('lua_ls', { 'lua-language-server' }, { 'lua' }, {
+    Lua = {
+        runtime = { version = 'LuaJIT' }
+    }
+})
 
-vim.lsp.config["clangd"] = {
-    cmd = { 'clangd' },
-    filetypes = { 'c' },
-}
-vim.lsp.enable('clangd')
+setup_lsp('zls', { 'zls' }, { 'zig', 'zir' }, {})
+
+setup_lsp('clangd', { 'clangd' }, { 'c' }, {})
+
+
 
 local cmp = require 'cmp'
 cmp.setup({
