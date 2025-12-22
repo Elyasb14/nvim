@@ -1,5 +1,17 @@
 {
   "plugins": {
+    "cmp-nvim-lsp": {
+      "rev": "cbc7b02bb99fae35cb42f514762b89b5126651ef",
+      "src": "git@github.com:hrsh7th/cmp-nvim-lsp"
+    },
+    "cmp-path": {
+      "rev": "c642487086dbd9a93160e1679a1327be111cbc25",
+      "src": "git@github.com:hrsh7th/cmp-path"
+    },
+    "nvim-cmp": {
+      "rev": "d97d85e01339f01b842e6ec1502f639b080cb0fc",
+      "src": "git@github.com:hrsh7th/nvim-cmp.git"
+    },
     "nvim-lspconfig": {
       "rev": "01304066f1390a5478c143a39e9aedaed6a4f209",
       "src": "git@github.com:neovim/nvim-lspconfig"
