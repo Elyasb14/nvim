@@ -9,11 +9,13 @@ vim.pack.add({
 
 })
 
+vim.g.mapleader = ' '
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -30,8 +32,12 @@ ts.setup({
     ensure_installed = { "zig", "c", "bash", "lua" },
     highlight = { enable = true },
     auto_install = true,
+    sync_install = true,
+    prefer_git = true,
     build = ':TSUpdate',
 })
+
+
 
 -- highlight what you copied
 vim.api.nvim_create_autocmd('TextYankPost', {
