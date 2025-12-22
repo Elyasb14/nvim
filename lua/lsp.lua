@@ -39,9 +39,18 @@ cmp.setup({
     },
 })
 
+vim.diagnostic.config({
+    signs = true,
+    virtual_text = false,
+    underline = true,
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("LspFormatting", {}),
+    group = vim.api.nvim_create_augroup("LspConfig", {}),
     callback = function(event)
+        local opts = { buffer = event.buf }
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = event.buf,
             callback = function()
@@ -49,9 +58,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
             end,
         })
     end,
-})
-
-vim.diagnostic.config({
-    signs = true,
-    virtual_text = true,
 })

@@ -4,8 +4,6 @@ vim.pack.add({
     'git@github.com:hrsh7th/nvim-cmp.git',
     'git@github.com:hrsh7th/cmp-nvim-lsp',
     'git@github.com:hrsh7th/cmp-path',
-    'git@github.com:folke/tokyonight.nvim',
-    'git@github.com:rose-pine/neovim',
     'git@github.com:sainnhe/everforest',
     'git@github.com:junegunn/fzf',
     'git@github.com:junegunn/fzf.vim'
