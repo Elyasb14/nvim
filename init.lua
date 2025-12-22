@@ -5,7 +5,9 @@ vim.pack.add({
     'git@github.com:hrsh7th/cmp-nvim-lsp',
     'git@github.com:hrsh7th/cmp-path',
     'git@github.com:folke/tokyonight.nvim',
-    'git@github.com:rose-pine/neovim'
+    'git@github.com:rose-pine/neovim',
+    'git@github.com:junegunn/fzf',
+    'git@github.com:junegunn/fzf.vim'
 
 })
 
@@ -16,6 +18,8 @@ vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+vim.keymap.set('n', '<C-p>', ':Files<CR>', { desc = 'Fuzzy find files' })
+vim.keymap.set('n', '<C-g>', ':Rg<CR>', { desc = 'Grep search in files' })
 
 vim.opt.number = true
 vim.opt.relativenumber = true
