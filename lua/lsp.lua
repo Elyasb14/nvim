@@ -16,7 +16,7 @@ end
 setup_lsp('lua_ls', { 'lua-language-server' }, { 'lua' }, {
     Lua = {
         runtime = { version = 'LuaJIT' },
-        diagnostics = { globals = { 'vim' } }
+        root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
     }
 })
 setup_lsp('zls', { 'zls' }, { 'zig', 'zir' }, {})
