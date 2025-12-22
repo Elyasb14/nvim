@@ -47,5 +47,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
-require("lua.lsp")
-require("lua.color")
+require("ebianchi.lsp")
+require("ebianchi.color")
