@@ -15,15 +15,12 @@ end
 
 setup_lsp('lua_ls', { 'lua-language-server' }, { 'lua' }, {
     Lua = {
-        runtime = { version = 'LuaJIT' }
+        runtime = { version = 'LuaJIT' },
+        diagnostics = { globals = { 'vim' } }
     }
 })
-
 setup_lsp('zls', { 'zls' }, { 'zig', 'zir' }, {})
-
 setup_lsp('clangd', { 'clangd' }, { 'c' }, {})
-
-
 
 local cmp = require 'cmp'
 cmp.setup({
@@ -42,7 +39,7 @@ cmp.setup({
 
 vim.diagnostic.config({
     signs = true,
-    virtual_text = false,
+    virtual_text = true,
     underline = true,
 })
 
