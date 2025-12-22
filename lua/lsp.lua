@@ -18,6 +18,12 @@ vim.lsp.config["zls"] = {
 }
 vim.lsp.enable('zls')
 
+vim.lsp.config["clangd"] = {
+    cmd = { 'clangd' },
+    filetypes = { 'c' },
+}
+vim.lsp.enable('clangd')
+
 local cmp = require 'cmp'
 cmp.setup({
     completion = { completeopt = 'menu,menuone,noinsert' },
@@ -43,4 +49,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
             end,
         })
     end,
+})
+
+vim.diagnostic.config({
+    signs = true,
+    virtual_text = true,
 })
