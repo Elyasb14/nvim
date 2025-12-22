@@ -6,6 +6,7 @@ vim.pack.add({
     'git@github.com:hrsh7th/cmp-path',
     'git@github.com:folke/tokyonight.nvim',
     'git@github.com:rose-pine/neovim',
+    'git@github.com:sainnhe/everforest',
     'git@github.com:junegunn/fzf',
     'git@github.com:junegunn/fzf.vim'
 
@@ -54,4 +55,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 
 require('lsp')
-require('colors')
+vim.cmd.colorscheme('everforest')
