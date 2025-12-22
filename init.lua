@@ -19,7 +19,7 @@ vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-vim.keymap.set('n', '<C-p>', ':Files<CR>', { desc = 'Fuzzy find files' })
+vim.keymap.set('n', '<C-f>', ':Files<CR>', { desc = 'Fuzzy find files' })
 vim.keymap.set('n', '<C-g>', ':Rg<CR>', { desc = 'Grep search in files' })
 
 vim.opt.number = true
