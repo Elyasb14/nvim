@@ -19,6 +19,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set('n', '<C-f>', ':Files<CR>', { desc = 'Fuzzy find files' })
 vim.keymap.set('n', '<C-g>', ':Rg<CR>', { desc = 'Grep search in files' })
+vim.keymap.set('n', '<C-m>', vim.cmd.Ex)
 
 vim.opt.number = true
 vim.opt.relativenumber = true
