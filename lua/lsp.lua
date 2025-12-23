@@ -38,7 +38,7 @@ cmp.setup({
 })
 
 vim.diagnostic.config({
-    signs = true,
+    signs = false,
     virtual_text = true,
     underline = true,
 })
