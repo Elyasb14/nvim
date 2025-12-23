@@ -16,7 +16,7 @@ end
 setup_lsp('lua_ls', { 'lua-language-server' }, { 'lua' }, {
     Lua = {
         runtime = { version = 'LuaJIT' },
-        root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
+        root_markers = { '.luarc.json', '.luarc.jsonc', '.git' },
     }
 })
 setup_lsp('zls', { 'zls' }, { 'zig', 'zir' }, {})
@@ -38,7 +38,7 @@ cmp.setup({
 })
 
 vim.diagnostic.config({
-    signs = false,
+    signs = false, -- no letters in left bar
     virtual_text = true,
     underline = true,
 })
@@ -49,6 +49,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local opts = { buffer = event.buf }
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = event.buf,
             callback = function()
