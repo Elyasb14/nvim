@@ -2,25 +2,25 @@
 --- @param cmd string[] Command to start the LSP server
 --- @param filetypes string[] File types this server handles
 --- @param settings table? Optional settings for the server
+--- @param root_markers string[]? Optional root markers
 --- @return nil
-local function setup_lsp(name, cmd, filetypes, settings)
+local function setup_lsp(name, cmd, filetypes, settings, root_markers)
     vim.lsp.config[name] = {
         cmd = cmd,
         filetypes = filetypes,
-        root_markers = {},
+        root_markers = root_markers or {},
         settings = settings or {}
     }
     vim.lsp.enable(name)
 end
 
 setup_lsp('lua_ls', { 'lua-language-server' }, { 'lua' }, {
-    Lua = {
-        runtime = { version = 'LuaJIT' },
-        root_markers = { '.luarc.json', '.luarc.jsonc', '.git' },
-    }
-})
+    Lua = { runtime = { version = 'LuaJIT' } }
+}, { '.luarc.json', '.luarc.jsonc', '.git' })
 setup_lsp('zls', { 'zls' }, { 'zig', 'zir' }, {})
 setup_lsp('clangd', { 'clangd' }, { 'c' }, {})
+setup_lsp('basedpyright', { 'basedpyright-langserver', '--stdio' }, { 'python' }, {},
+    { 'pyproject.toml', 'setup.py', '.git' })
 
 local cmp = require 'cmp'
 cmp.setup({
