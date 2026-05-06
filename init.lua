@@ -33,7 +33,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 local ts = require 'nvim-treesitter'
 ts.setup({
     install_dir = vim.fn.stdpath('data') .. '/site',
-    ensure_installed = { "zig", "c", "bash", "lua" },
+    ensure_installed = { "zig", "c", "cpp", "bash", "lua" },
     highlight = { enable = true },
     auto_install = true,
     sync_install = true,
